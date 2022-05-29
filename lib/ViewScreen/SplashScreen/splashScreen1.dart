@@ -11,7 +11,7 @@ class SPlashScreen1 extends StatefulWidget {
   @override
   _SPlashScreen1State createState() => _SPlashScreen1State();
 }
-
+/// first screen to move on
 class _SPlashScreen1State extends State<SPlashScreen1> {
   @override
   void initState() {
