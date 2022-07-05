@@ -28,6 +28,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   google_sign_in:
+  flutter_svg:
   shared_preferences:
   fluttertoast:
   cupertino_icons:
@@ -42,7 +43,7 @@ dependencies:
   firebase_core:
   firebase_auth:
   otp_text_field:
-  flutter_datetime_picker:
+  # flutter_datetime_picker:
   http:
   http_parser:
   google_fonts:
@@ -57,8 +58,8 @@ dependencies:
   better_player:
   percent_indicator:
   toggle_switch:
-  assets_audio_player: 3.0.2
-  syncfusion_flutter_gauges: 19.4.38
+  # assets_audio_player: 3.0.2
+  # syncfusion_flutter_gauges: 19.4.38
   stop_watch_timer:
   flutter_barcode_scanner:
   flutter_scale_ruler:
@@ -71,11 +72,11 @@ dev_dependencies:
     sdk: flutter
 
 
-dependency_overrides:
-  charts_flutter:
-    git:
-      url: https://github.com/google/charts
-      path: charts_flutter
+# dependency_overrides:
+#   charts_flutter:
+#     git:
+#       url: https://github.com/google/charts
+#       path: charts_flutter
 
 
 

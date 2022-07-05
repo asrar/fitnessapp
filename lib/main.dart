@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:fitnessapp/AppLayer/Provider.dart' as pro;
 import 'package:fitnessapp/ViewScreen/SplashScreen/splashScreen1.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'AppLayer/Overseer.dart';
@@ -11,8 +10,7 @@ bool isdark = false;
 
 void main() {
   HttpOverrides.global = new MyHttpOverrides();
-  runApp(
-      MyApp());
+  runApp(MyApp());
 }
 
 // appBarTheme: AppBarTheme(brightness: Brightness.dark),
@@ -48,4 +46,3 @@ class MyHttpOverrides extends HttpOverrides {
           (X509Certificate cert, String host, int port) => true;
   }
 }
-

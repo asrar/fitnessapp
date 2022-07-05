@@ -218,7 +218,7 @@ class _HomePage20State extends State<HomePage20> {
                       Expanded(
                         child: GestureDetector(
                           onTap: () {
-                            Get.to(StatisticsScreen());
+                            // Get.to(StatisticsScreen());
                           },
                           child: Container(
                             height: 50,

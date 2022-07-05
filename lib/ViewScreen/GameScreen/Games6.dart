@@ -1,16 +1,16 @@
 import 'dart:math';
 import 'dart:async';
-import 'package:assets_audio_player/assets_audio_player.dart';
+// import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:fitnessapp/AppLayer/Overseer.dart';
 import 'package:fitnessapp/Utils/appColors.dart';
 import 'package:fitnessapp/data/some_Data.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+// import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:get/get.dart';
 import 'package:fitnessapp/widget/naseerWidgets/CustomButton.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:syncfusion_flutter_gauges/gauges.dart';
+// import 'package:syncfusion_flutter_gauges/gauges.dart';
 import 'Game7.dart';
 import '../Setting/Settings.dart';
 
@@ -27,47 +27,47 @@ class _Games6State extends State<Games6> with SingleTickerProviderStateMixin {
     incrementIndex();
     iconController = AnimationController(
         vsync: this, duration: Duration(milliseconds: 1000));
-    audioPlayer.open(Audio('assets/audio/audio.m4a'),
-        autoStart: false, showNotification: true);
+    // audioPlayer.open(Audio('assets/audio/audio.m4a'),
+    //     autoStart: false, showNotification: true);
   }
 
   @override
   void dispose() {
     // TODO: implement dispose
-    iconController!.dispose();
-    audioPlayer.dispose();
-    super.dispose();
+    // iconController!.dispose();
+    // audioPlayer.dispose();
+    // super.dispose();
   }
 
   void AnimateIcon() {
-    setState(() {
-      isAnimated = !isAnimated;
-      if (isAnimated) {
-        iconController!.forward();
-        audioPlayer.play();
-      } else {
-        iconController!.reverse();
-        audioPlayer.pause();
-      }
-    });
+    // setState(() {
+    //   isAnimated = !isAnimated;
+    //   if (isAnimated) {
+    //     iconController!.forward();
+    //     audioPlayer.play();
+    //   } else {
+    //     iconController!.reverse();
+    //     audioPlayer.pause();
+    //   }
+    // });
   }
 
   void stopAudio() {
-    audioPlayer.stop();
-    audioPlayer.dispose();
-    setState(() {
-      isAnimated = false;
-    });
+    // audioPlayer.stop();
+    // audioPlayer.dispose();
+    // setState(() {
+    //   isAnimated = false;
+    // });
   }
 
   /// volume value
   Random random = new Random();
-  int randomNumber=0;
+  int randomNumber = 0;
   AnimationController? iconController;
   bool isAnimated = false;
   bool showPlay = true;
   bool shopPause = false;
-  AssetsAudioPlayer audioPlayer = AssetsAudioPlayer();
+  // AssetsAudioPlayer audioPlayer = AssetsAudioPlayer();
   double decrement_Value = 0.1;
   double increment_Value = 0.1;
   int index = 0;
@@ -141,47 +141,47 @@ class _Games6State extends State<Games6> with SingleTickerProviderStateMixin {
                 SizedBox(
                   height: 5,
                 ),
-                Positioned(
-                  top: 50,
-                  left: 24,
-                  child: Container(
-                    height: 120,
-                    width: 120,
-                    child: SfRadialGauge(axes: <RadialAxis>[
-                      RadialAxis(
-                        minimum: 75,
-                        maximum: 125,
-                        startAngle: 270,
-                        endAngle: 270,
-                        showLabels: false,
-                        showTicks: false,
-                        radiusFactor: 0.6,
-                        axisLineStyle: AxisLineStyle(
-                            cornerStyle: CornerStyle.bothFlat,
-                            color: Colors.black12,
-                            thickness: 12),
-                        pointers: <GaugePointer>[
-                          RangePointer(
-                            value: randomValue.toDouble(),
-                            cornerStyle: CornerStyle.bothFlat,
-                            width: 4,
-                            sizeUnit: GaugeSizeUnit.logicalPixel,
-                            color: const Color(0xFFAD1457),
-                          ),
-                          MarkerPointer(
-                              value: randomValue.toDouble(),
-                              enableDragging: true,
-                              markerHeight: 6,
-                              markerWidth: 6,
-                              markerType: MarkerType.circle,
-                              color: const Color(0xFFF8BBD0),
-                              borderWidth: 2,
-                              borderColor: Colors.white54)
-                        ],
-                      )
-                    ]),
-                  ),
-                ),
+                // Positioned(
+                //   top: 50,
+                //   left: 24,
+                //   child: Container(
+                //     height: 120,
+                //     width: 120,
+                //     child: SfRadialGauge(axes: <RadialAxis>[
+                //       RadialAxis(
+                //         minimum: 75,
+                //         maximum: 125,
+                //         startAngle: 270,
+                //         endAngle: 270,
+                //         showLabels: false,
+                //         showTicks: false,
+                //         radiusFactor: 0.6,
+                //         axisLineStyle: AxisLineStyle(
+                //             cornerStyle: CornerStyle.bothFlat,
+                //             color: Colors.black12,
+                //             thickness: 12),
+                //         pointers: <GaugePointer>[
+                //           RangePointer(
+                //             value: randomValue.toDouble(),
+                //             cornerStyle: CornerStyle.bothFlat,
+                //             width: 4,
+                //             sizeUnit: GaugeSizeUnit.logicalPixel,
+                //             color: const Color(0xFFAD1457),
+                //           ),
+                //           MarkerPointer(
+                //               value: randomValue.toDouble(),
+                //               enableDragging: true,
+                //               markerHeight: 6,
+                //               markerWidth: 6,
+                //               markerType: MarkerType.circle,
+                //               color: const Color(0xFFF8BBD0),
+                //               borderWidth: 2,
+                //               borderColor: Colors.white54)
+                //         ],
+                //       )
+                //     ]),
+                //   ),
+                // ),
                 Positioned(
                     top: 100,
                     left: 60,
@@ -263,7 +263,9 @@ class _Games6State extends State<Games6> with SingleTickerProviderStateMixin {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15.0),
                   child: CustomButton(
-                    color: Overseer.isColor ? MyAppColors.pickcolor:MyAppColors.orangcolors,
+                    color: Overseer.isColor
+                        ? MyAppColors.pickcolor
+                        : MyAppColors.orangcolors,
                     buttonName: 'Next'.tr,
                   ),
                 ),
@@ -279,7 +281,7 @@ class _Games6State extends State<Games6> with SingleTickerProviderStateMixin {
 
   void random_Second_Generate() {
     setState(() {
-      randomNumber = random.nextInt(20 );
+      randomNumber = random.nextInt(20);
     });
   }
 
@@ -299,17 +301,17 @@ class _Games6State extends State<Games6> with SingleTickerProviderStateMixin {
 
   ///Audio Controller
   void auto_play_audio() {
-    if (list_Heart_Rate[index] >= 70 && list_Heart_Rate[index] < 80) {
-      AnimateIcon();
-      snackBar(Colors.green, "Play Audio with Low Sound");
-      audioPlayer.setVolume(0.1);
-    } else if (list_Heart_Rate[index] >= 80 && list_Heart_Rate[index] < 90) {
-      audioPlayer.stop();
-    } else if (list_Heart_Rate[index] >= 90 && list_Heart_Rate[index] < 124) {
-      AnimateIcon();
-      audioPlayer.setVolume(0.9);
-      snackBar(Colors.red, "Play Audio with High Sound");
-    }
+    // if (list_Heart_Rate[index] >= 70 && list_Heart_Rate[index] < 80) {
+    //   AnimateIcon();
+    //   snackBar(Colors.green, "Play Audio with Low Sound");
+    //   audioPlayer.setVolume(0.1);
+    // } else if (list_Heart_Rate[index] >= 80 && list_Heart_Rate[index] < 90) {
+    //   audioPlayer.stop();
+    // } else if (list_Heart_Rate[index] >= 90 && list_Heart_Rate[index] < 124) {
+    //   AnimateIcon();
+    //   audioPlayer.setVolume(0.9);
+    //   snackBar(Colors.red, "Play Audio with High Sound");
+    // }
   }
 
   /// Volume Decrement Function
@@ -347,6 +349,7 @@ class _Games6State extends State<Games6> with SingleTickerProviderStateMixin {
         if (index < list_Heart_Rate.length) {
           index++;
         }
+
         /// random_Second_Generate();
         auto_play_audio();
         randomValue = list_Heart_Rate[index];

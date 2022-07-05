@@ -17,7 +17,6 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Barcode/barcode_scan.dart';
-import '../BMI/bmi.dart';
 
 class MenuScreen extends StatefulWidget {
   @override
@@ -159,7 +158,7 @@ class _MenuScreenState extends State<MenuScreen> {
                       ProfileLIsttileWidget(
                         name: "Statistic".tr,
                         ontap: () {
-                          Get.to(StatisticsScreen());
+                          // Get.to(StatisticsScreen());
                         },
                         icon1: Icons.baby_changing_station_sharp,
                         icon2: Icons.arrow_forward_ios,
@@ -223,7 +222,7 @@ class _MenuScreenState extends State<MenuScreen> {
                       containerColor: Colors.yellowAccent.withOpacity(0.1),
                       image: "assets/image/09-timer.png",
                       ontap: () {
-                        Get.to(TimerScreen());
+                        // Get.to(TimerScreen());
                       },
                     ),
                     BottomBarCOntainer(
@@ -249,9 +248,7 @@ class _MenuScreenState extends State<MenuScreen> {
                       borderColor: Colors.cyanAccent,
                       containerColor: Colors.indigoAccent.withOpacity(0.1),
                       image: "assets/image/weight-scale.png",
-                      ontap: () {
-                        Get.to(BmiScreen());
-                      },
+                      ontap: () {},
                     ),
                   ],
                 )
