@@ -21,15 +21,13 @@ class _Theme2State extends State<Theme2> {
       appBar: AppBar(
         title: Text(
           'Theme'.tr,
-          style: TextStyle(color: Colors.black, letterSpacing: 1),
+          style: TextStyle(letterSpacing: 1),
         ),
         centerTitle: true,
         elevation: 0,
-        backgroundColor: Colors.white,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_ios,
-            color: Colors.black,
           ),
           onPressed: () {
             Navigator.pop(context,
@@ -37,7 +35,6 @@ class _Theme2State extends State<Theme2> {
           },
         ),
       ),
-      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
         child: Container(

@@ -8,7 +8,6 @@ import 'package:fitnessapp/ViewScreen/Homepages/homepage6.dart';
 import 'package:fitnessapp/ViewScreen/MenuScreens/menuScreen.dart';
 import 'package:fitnessapp/widget/filterScrenLIstview1.dart';
 import 'package:fitnessapp/widget/filterscreenListview2.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -88,7 +87,6 @@ class _FilterPage3State extends State<FilterPage3> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     weekdata.forEach((e) {
       WeekData.add(ModelClass.fromJson(e));
@@ -103,6 +101,23 @@ class _FilterPage3State extends State<FilterPage3> {
     CourseManager manager = Provider.of(context).fetch(CourseManager);
     return SafeArea(
       child: Scaffold(
+        drawer: Drawer(
+          backgroundColor: Colors.black,
+          child: MenuScreen(),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topRight: Radius.circular(400),
+                bottomRight: Radius.circular(400)),
+          ),
+        ),
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          centerTitle: true,
+          title: Text(
+            "Fitness".tr,
+          ),
+          leading: Drawericon(),
+        ),
         body: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           child: Container(
@@ -114,26 +129,7 @@ class _FilterPage3State extends State<FilterPage3> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.search,
-                        color: Colors.black,
-                      ),
-                    ),
-                    Text("Fitness".tr),
-                    IconButton(
-                        onPressed: () {
-                          Get.to(MenuScreen());
-                        },
-                        icon: ImageIcon(
-                          AssetImage(
-                            "assets/image/Layer 2.png",
-                          ),
-                          color: Overseer.isColor ? MyAppColors.pickcolor:MyAppColors.orangcolors,
-                        ))
-                  ],
+                  children: [],
                 ),
                 SizedBox(
                   height: 18,
@@ -179,20 +175,24 @@ class _FilterPage3State extends State<FilterPage3> {
                                     itemCount: _catList[0].Data1.length,
                                     itemBuilder: (context, index) {
                                       {
-                                        return  GestureDetector(
+                                        return GestureDetector(
                                           onTap: () {
                                             Get.to(HomePage6(
-                                              courseId: "${course.Data1[index].CourseCategories1.courseId}",
+                                              courseId:
+                                                  "${course.Data1[index].CourseCategories1.courseId}",
                                               dayAcivityonGoing: [],
-                                              videoURL: "${course.Data1[index].video}",
-                                              dayAcivity: course.Data1[index].DayActivity1,
+                                              videoURL:
+                                                  "${course.Data1[index].video}",
+                                              dayAcivity: course
+                                                  .Data1[index].DayActivity1,
                                               title: course.Data1[index].title,
-                                              descriptiom:
-                                                  course.Data1[index].description,
+                                              descriptiom: course
+                                                  .Data1[index].description,
                                             ));
                                           },
                                           child: ListViewFIlterScren1(
-                                            image: course.Data1[index].image == null
+                                            image: course.Data1[index].image ==
+                                                    null
                                                 ? "https://images.hdqwalls.com/wallpapers/gym-girl.jpg"
                                                 : "${Overseer.course_image_path}/${course.Data1[index].image}",
                                             percent: "0%",
@@ -233,7 +233,8 @@ class _FilterPage3State extends State<FilterPage3> {
                               if (snapshot.hasData) {
                                 List<GetCoursesModel>? _catList = snapshot.data;
                                 GetCoursesModel course = _catList![0];
-                                print("the home creen data inside filtr screen ${course.Data1}");
+                                print(
+                                    "the home creen data inside filtr screen ${course.Data1}");
                                 return ListView.builder(
                                     // shrinkWrap: true,
                                     scrollDirection: Axis.horizontal,
@@ -242,29 +243,31 @@ class _FilterPage3State extends State<FilterPage3> {
                                     itemBuilder: (context, index) {
                                       {
                                         return GestureDetector(
-
                                           onTap: () {
-
                                             Get.to(HomePage6(
-                                              courseId: "${course.Data1[index].CourseCategories1.courseId}",
+                                              courseId:
+                                                  "${course.Data1[index].CourseCategories1.courseId}",
                                               dayAcivityonGoing: [],
-                                              videoURL: "${course.Data1[index].video}",
-                                              dayAcivity: course.Data1[index].DayActivity1,
+                                              videoURL:
+                                                  "${course.Data1[index].video}",
+                                              dayAcivity: course
+                                                  .Data1[index].DayActivity1,
                                               title: course.Data1[index].title,
-                                              descriptiom:
-                                                  course.Data1[index].description,
+                                              descriptiom: course
+                                                  .Data1[index].description,
                                             ));
                                           },
                                           child: ListViewFIlterScren2(
-                                            image: course.Data1[index].image == null
+                                            image: course.Data1[index].image ==
+                                                    null
                                                 ? "https://images.hdqwalls.com/wallpapers/gym-girl.jpg"
                                                 : "${Overseer.course_image_path}/${course.Data1[index].image}",
                                             percent: "0%",
                                             // title1: course.Data[index].title,
                                             title1:
-                                            "Day: ${course.Data1[index].daystocompletion.toString()}",
+                                                "Day: ${course.Data1[index].daystocompletion.toString()}",
                                             title2:
-                                            "${course.Data1[index].description}",
+                                                "${course.Data1[index].description}",
 
                                             // course.Data1[0].Trainer1 !=
                                             //     null
@@ -306,28 +309,32 @@ class _FilterPage3State extends State<FilterPage3> {
                                         return GestureDetector(
                                           onTap: () {
                                             print("for testing");
-                                            print("th is iamge pat actc ${course.Data1[index].DayActivity1.length}");
+                                            print(
+                                                "th is iamge pat actc ${course.Data1[index].DayActivity1.length}");
                                             Get.to(HomePage6(
-                                              courseId: "${course.Data1[index].CourseCategories1.courseId}",
+                                              courseId:
+                                                  "${course.Data1[index].CourseCategories1.courseId}",
                                               dayAcivityonGoing: [],
-                                              videoURL: "${course.Data1[index].video}",
-                                              dayAcivity: course.Data1[index].DayActivity1,
+                                              videoURL:
+                                                  "${course.Data1[index].video}",
+                                              dayAcivity: course
+                                                  .Data1[index].DayActivity1,
                                               title: course.Data1[0].title,
                                               descriptiom:
                                                   course.Data1[0].description,
                                             ));
                                           },
                                           child: ListViewFIlterScren2(
-                                            image: course.Data1[index].image == null
+                                            image: course.Data1[index].image ==
+                                                    null
                                                 ? "https://images.hdqwalls.com/wallpapers/gym-girl.jpg"
                                                 : "${Overseer.course_image_path}/${course.Data1[index].image}",
                                             percent: "0%",
                                             // title1: course.Data[index].title,
                                             title1:
-                                            "Day: ${course.Data1[index].daystocompletion.toString()}",
+                                                "Day: ${course.Data1[index].daystocompletion.toString()}",
                                             title2:
-                                            "${course.Data1[index].description}",
-
+                                                "${course.Data1[index].description}",
                                           ),
                                         );
                                       }
@@ -347,6 +354,26 @@ class _FilterPage3State extends State<FilterPage3> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class Drawericon extends StatelessWidget {
+  const Drawericon({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: ImageIcon(
+        AssetImage(
+          "assets/image/Layer 2.png",
+        ),
+        color:
+            Overseer.isColor ? MyAppColors.pickcolor : MyAppColors.orangcolors,
+      ),
+      onPressed: () => Scaffold.of(context).openDrawer(),
     );
   }
 }

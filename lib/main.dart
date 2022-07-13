@@ -25,8 +25,20 @@ class _MyAppState extends State<MyApp> {
     return pro.Provider(
         data: Overseer(),
         child: GetMaterialApp(
+          themeMode: ThemeMode.dark,
           title: "Fitness",
           theme: ThemeData(
+            appBarTheme: AppBarTheme(backgroundColor: Colors.black),
+            // drawerTheme: DrawerThemeData(backgroundColor: Colors.transparent),
+
+            textTheme: TextTheme(
+              bodyText1: TextStyle(),
+              bodyText2: TextStyle(),
+            ).apply(
+              bodyColor: Colors.orange,
+              displayColor: Colors.blue,
+            ),
+            scaffoldBackgroundColor: Colors.transparent,
             fontFamily: "Gilroy",
           ),
           debugShowCheckedModeBanner: false,

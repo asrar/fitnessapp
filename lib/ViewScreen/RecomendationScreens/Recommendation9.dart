@@ -293,7 +293,7 @@ class Recommendation9 extends StatefulWidget {
   // Recommendation9(this._title, this._timeOfDay, this._updateTimeFunction);
   @override
   _Recommendation9State createState() => _Recommendation9State();
-  final String courseId ;
+  final String courseId;
   Recommendation9({required this.courseId});
 }
 
@@ -331,9 +331,9 @@ class _Recommendation9State extends State<Recommendation9> {
   // Recommendation9(this._title, this._timeOfDay, this._updateTimeFunction);
   @override
   Widget build(BuildContext context) {
-    AddCoursesScheduleManager manager = Provider.of(context).fetch(AddCoursesScheduleManager);
+    AddCoursesScheduleManager manager =
+        Provider.of(context).fetch(AddCoursesScheduleManager);
     return Scaffold(
-      backgroundColor: Colors.grey[300],
       body: Column(
         children: [
           SizedBox(
@@ -342,7 +342,6 @@ class _Recommendation9State extends State<Recommendation9> {
           Container(
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-                color: Colors.white,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(60),
                     topRight: Radius.circular(60))),
@@ -386,7 +385,7 @@ class _Recommendation9State extends State<Recommendation9> {
                     highlightedTextStyle: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black),
+                        color: Colors.orange),
                     spacing: 50,
                     itemHeight: 80,
                     isForce2Digits: true,
@@ -433,8 +432,8 @@ class _Recommendation9State extends State<Recommendation9> {
                                   width: 2,
                                   color: day1
                                       ? Overseer.isColor
-                                      ? MyAppColors.pickcolor
-                                      : MyAppColors.orangcolors
+                                          ? MyAppColors.pickcolor
+                                          : MyAppColors.orangcolors
                                       : Colors.grey),
                               borderRadius: BorderRadius.circular(5)),
                           child: Center(child: Text("M")),
@@ -459,8 +458,8 @@ class _Recommendation9State extends State<Recommendation9> {
                                   width: 2,
                                   color: day2
                                       ? Overseer.isColor
-                                      ? MyAppColors.pickcolor
-                                      : MyAppColors.orangcolors
+                                          ? MyAppColors.pickcolor
+                                          : MyAppColors.orangcolors
                                       : Colors.grey),
                               borderRadius: BorderRadius.circular(5)),
                           child: Center(child: Text("T")),
@@ -474,7 +473,6 @@ class _Recommendation9State extends State<Recommendation9> {
                           setState(() {
                             day3int = 1;
                             day3 = !day3;
-
                           });
                         },
                         child: Container(
@@ -486,8 +484,8 @@ class _Recommendation9State extends State<Recommendation9> {
                                   width: 2,
                                   color: day3
                                       ? Overseer.isColor
-                                      ? MyAppColors.pickcolor
-                                      : MyAppColors.orangcolors
+                                          ? MyAppColors.pickcolor
+                                          : MyAppColors.orangcolors
                                       : Colors.grey),
                               borderRadius: BorderRadius.circular(5)),
                           child: Center(child: Text("W")),
@@ -512,8 +510,8 @@ class _Recommendation9State extends State<Recommendation9> {
                                   width: 2,
                                   color: day4
                                       ? Overseer.isColor
-                                      ? MyAppColors.pickcolor
-                                      : MyAppColors.orangcolors
+                                          ? MyAppColors.pickcolor
+                                          : MyAppColors.orangcolors
                                       : Colors.grey),
                               borderRadius: BorderRadius.circular(5)),
                           child: Center(child: Text("T")),
@@ -538,8 +536,8 @@ class _Recommendation9State extends State<Recommendation9> {
                                   width: 2,
                                   color: day5
                                       ? Overseer.isColor
-                                      ? MyAppColors.pickcolor
-                                      : MyAppColors.orangcolors
+                                          ? MyAppColors.pickcolor
+                                          : MyAppColors.orangcolors
                                       : Colors.grey),
                               borderRadius: BorderRadius.circular(5)),
                           child: Center(child: Text("F")),
@@ -551,7 +549,7 @@ class _Recommendation9State extends State<Recommendation9> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                            day6int  =1;
+                            day6int = 1;
                             day6 = !day6;
                           });
                         },
@@ -564,8 +562,8 @@ class _Recommendation9State extends State<Recommendation9> {
                                   width: 2,
                                   color: day6
                                       ? Overseer.isColor
-                                      ? MyAppColors.pickcolor
-                                      : MyAppColors.orangcolors
+                                          ? MyAppColors.pickcolor
+                                          : MyAppColors.orangcolors
                                       : Colors.grey),
                               borderRadius: BorderRadius.circular(5)),
                           child: Center(child: Text("S")),
@@ -587,11 +585,11 @@ class _Recommendation9State extends State<Recommendation9> {
                           margin: EdgeInsets.symmetric(horizontal: 3),
                           decoration: BoxDecoration(
                               border: Border.all(
-                                width: 2,
+                                  width: 2,
                                   color: day7
                                       ? Overseer.isColor
-                                      ? MyAppColors.pickcolor
-                                      : MyAppColors.orangcolors
+                                          ? MyAppColors.pickcolor
+                                          : MyAppColors.orangcolors
                                       : Colors.grey),
                               borderRadius: BorderRadius.circular(5)),
                           child: Center(child: Text("S")),
@@ -639,36 +637,39 @@ class _Recommendation9State extends State<Recommendation9> {
                     height: Get.height * 0.050,
                   ),
                   StreamBuilder<List<AddCourseScheduleModel>>(
-                    stream: manager.mainList,
-                    builder: (context, snapshot) {
-                      return InkWell(
-                        onTap: () {
-                          print("Outside Event");
-                          Overseer.scheduleQuery = "";
-                          Overseer.scheduleQuery = "course_id=${widget.courseId}&sun=${day7int}&mon=${day1int}&tue=${day2int}&wed=${day4int}&thu=${day5int}&fri=${day6int}&sat=${day6int}";
-                          print(" querry this one${Overseer.scheduleQuery}");
-                          manager.mainList.listen((event) {
-                            print("Inside Event");
-                            if (Overseer.isOngoingSuccess) {
-                              print("Inside Oveerseer");
-                              Get.snackbar("Thanks", " Your course has been registered",backgroundColor: MyAppColors.orangcolors);
-                              Get.to(Logbook());
+                      stream: manager.mainList,
+                      builder: (context, snapshot) {
+                        return InkWell(
+                          onTap: () {
+                            print("Outside Event");
+                            Overseer.scheduleQuery = "";
+                            Overseer.scheduleQuery =
+                                "course_id=${widget.courseId}&sun=${day7int}&mon=${day1int}&tue=${day2int}&wed=${day4int}&thu=${day5int}&fri=${day6int}&sat=${day6int}";
+                            print(" querry this one${Overseer.scheduleQuery}");
+                            manager.mainList.listen((event) {
+                              print("Inside Event");
+                              if (Overseer.isOngoingSuccess) {
+                                print("Inside Oveerseer");
+                                Get.snackbar("Thanks",
+                                    " Your course has been registered",
+                                    backgroundColor: MyAppColors.orangcolors);
+                                Get.to(Logbook());
+                              } else {
+                                Get.snackbar("Error", "Get some error");
+                              }
+                            });
 
-                            } else {
-                              Get.snackbar("Error", "Get some error");
-                            }
-                          });
-
-                          // Navigator.push(context,
-                          //     MaterialPageRoute(builder: (context) => Logbook()));
-                        },
-                        child: CustomButton(
-                          buttonName: 'Save'.tr,
-                          color: Overseer.isColor ? MyAppColors.pickcolor:MyAppColors.orangcolors,
-                        ),
-                      );
-                    }
-                  ),
+                            // Navigator.push(context,
+                            //     MaterialPageRoute(builder: (context) => Logbook()));
+                          },
+                          child: CustomButton(
+                            buttonName: 'Save'.tr,
+                            color: Overseer.isColor
+                                ? MyAppColors.pickcolor
+                                : MyAppColors.orangcolors,
+                          ),
+                        );
+                      }),
                 ],
               ),
             ),

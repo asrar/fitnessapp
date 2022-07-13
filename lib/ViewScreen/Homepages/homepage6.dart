@@ -24,10 +24,9 @@ class HomePage6 extends StatefulWidget {
   List<DayActivity2> dayAcivityonGoing = [];
 
   HomePage6(
-      {
-        required this.courseId,
-        required this.dayAcivityonGoing,
-        required this.videoURL,
+      {required this.courseId,
+      required this.dayAcivityonGoing,
+      required this.videoURL,
       required this.title,
       required this.descriptiom,
       required this.dayAcivity});
@@ -144,7 +143,7 @@ class _HomePage6State extends State<HomePage6> {
                                     height: Get.height * 0.055,
                                     width: 41,
                                     decoration: BoxDecoration(
-                                        color: Colors.white,
+                                        color: Colors.transparent,
                                         borderRadius:
                                             BorderRadius.circular(100)),
                                     child: IconButton(
@@ -153,7 +152,7 @@ class _HomePage6State extends State<HomePage6> {
                                       },
                                       icon: Icon(
                                         Icons.arrow_back_ios,
-                                        color: Colors.black,
+                                        color: Colors.orange,
                                         size: Get.height * 0.025,
                                       ),
                                     ),
@@ -183,50 +182,6 @@ class _HomePage6State extends State<HomePage6> {
                               SizedBox(
                                 height: Get.height * 0.025,
                               ),
-                              Row(
-                                children: [
-                                  Container(
-                                    height: Get.height * 0.050,
-                                    width: 79,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(5),
-                                      color: Overseer.isColor
-                                          ? MyAppColors.pickcolor
-                                          : MyAppColors.orangcolors,
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        "6W / 4D".tr,
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: Get.width * 0.015,
-                                  ),
-                                  Text(
-                                    "Free".tr,
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white),
-                                  ),
-                                  Spacer(),
-                                  CircularPercentIndicator(
-                                    radius: Get.height * 0.075,
-                                    lineWidth: 5.0,
-                                    percent: 0.8,
-                                    center: new Text(
-                                      "80%".tr,
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                    progressColor: Overseer.isColor
-                                        ? MyAppColors.pickcolor
-                                        : MyAppColors.orangcolors,
-                                  )
-                                ],
-                              )
                             ],
                           ),
                         ),
@@ -241,10 +196,10 @@ class _HomePage6State extends State<HomePage6> {
                     height: MediaQuery.of(context).size.height * 0.6,
                     // padding: EdgeInsets.only(top: 16),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(40),
-                            topLeft: Radius.circular(40)),
-                        color: Colors.white),
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(40),
+                          topLeft: Radius.circular(40)),
+                    ),
                     child: SingleChildScrollView(
                       physics: BouncingScrollPhysics(),
                       child: Column(
@@ -255,7 +210,7 @@ class _HomePage6State extends State<HomePage6> {
                                 indicatorColor: Overseer.isColor
                                     ? MyAppColors.pickcolor
                                     : MyAppColors.orangcolors,
-                                labelColor: Colors.black,
+                                labelColor: Colors.orange,
                                 unselectedLabelColor: Colors.grey,
                                 tabs: [
                                   Tab(text: 'Details '.tr),
@@ -282,6 +237,57 @@ class _HomePage6State extends State<HomePage6> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
+                                            Row(
+                                              children: [
+                                                Container(
+                                                  height: Get.height * 0.050,
+                                                  width: 79,
+                                                  decoration: BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5),
+                                                    color: Overseer.isColor
+                                                        ? MyAppColors.pickcolor
+                                                        : MyAppColors
+                                                            .orangcolors,
+                                                  ),
+                                                  child: Center(
+                                                    child: Text(
+                                                      "6W / 4D".tr,
+                                                      style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          color: Colors.white),
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: Get.width * 0.015,
+                                                ),
+                                                Text(
+                                                  "Free".tr,
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      color: Colors.white),
+                                                ),
+                                                Spacer(),
+                                                CircularPercentIndicator(
+                                                  radius: Get.height * 0.05,
+                                                  lineWidth: 5.0,
+                                                  percent: 0.8,
+                                                  center: new Text(
+                                                    "80%".tr,
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  ),
+                                                  progressColor: Overseer
+                                                          .isColor
+                                                      ? MyAppColors.pickcolor
+                                                      : MyAppColors.orangcolors,
+                                                )
+                                              ],
+                                            ),
                                             Text("${widget.title}".tr,
                                                 style: TextStyle(
                                                   fontSize: 15,
@@ -311,9 +317,9 @@ class _HomePage6State extends State<HomePage6> {
                                                 ontap: () {
                                                   Get.to(Recommendation9(
                                                     courseId: "",
-                                                      // dayAcivity:
-                                                      //     widget.dayAcivity,
-                                                      ));
+                                                    // dayAcivity:
+                                                    //     widget.dayAcivity,
+                                                  ));
                                                 },
                                                 containercolor: Overseer.isColor
                                                     ? MyAppColors.pickcolor
@@ -325,181 +331,220 @@ class _HomePage6State extends State<HomePage6> {
                                   ),
                                   SingleChildScrollView(
                                     physics: BouncingScrollPhysics(),
-                                    child: widget.dayAcivityonGoing.length == 0 ? Container(
-                                      width: double.infinity,
-                                      margin: EdgeInsets.only(left: 15),
-                                      // height: 390,
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          SizedBox(
-                                            height: 15,
-                                          ),
-                                          Align(
-                                              alignment: Alignment.topLeft,
-                                              child: Text("Week 1".tr)),
-                                          SizedBox(
-                                            height: Get.height * 0.012,
-                                          ),
-                                          ///
-                                          Container(
-                                            height: Get.height * 0.15,
-                                            child: widget.dayAcivity.length == 0
-                                                ? Center(
-                                                    child: Text(
-                                                    "Day Activity Not Found",
-                                                    style: TextStyle(
-                                                        color: Colors.black),
-                                                  ))
-                                                : ListView.builder(
-                                                    scrollDirection:
-                                                        Axis.horizontal,
-                                                    itemCount: widget
-                                                        .dayAcivity.length,
-                                                    itemBuilder:
-                                                        (context, index) {
-                                                      {
-                                                        return GestureDetector(
-                                                          onTap: () {
+                                    child: widget.dayAcivityonGoing.length == 0
+                                        ? Container(
+                                            width: double.infinity,
+                                            margin: EdgeInsets.only(left: 15),
+                                            // height: 390,
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                SizedBox(
+                                                  height: 15,
+                                                ),
+                                                Align(
+                                                    alignment:
+                                                        Alignment.topLeft,
+                                                    child: Text("Week 1".tr)),
+                                                SizedBox(
+                                                  height: Get.height * 0.012,
+                                                ),
 
-                                                          },
-                                                          child:
-                                                              ListViewHorizental(
-                                                                image: widget
-                                                                    .dayAcivity[
-                                                                index]
-                                                                    .image ==
-                                                                    null
-                                                                    ? "https://images.hdqwalls.com/wallpapers/gym-girl.jpg"
-                                                                    : "${Overseer.course_image_path}/${widget.dayAcivity[index].image}",
-                                                            percent: Data[index]
-                                                                .percent,
-                                                            title1: widget
-                                                                .dayAcivity[
-                                                                    index]
-                                                                .day
-                                                                .toString(),
-                                                            title2: widget
-                                                                .dayAcivity[
-                                                                    index]
-                                                                .detail,
-                                                          ),
-                                                        );
-                                                      }
-                                                    }),
-                                          ),
-                                          SizedBox(
-                                            height: Get.height * 0.012,
-                                          ),
-                                          Container(
-                                            margin: EdgeInsets.only(right: 15),
-                                            child: MyButton(
-                                                shadowColor: Overseer.isColor
-                                                    ? MyAppColors.pickcolor
-                                                    : MyAppColors.orangcolors,
-                                                ontap: () {
-                                                  Get.to(Recommendation9(
-                                                    courseId: widget.courseId,
-                                                    // dayAcivity: widget.dayAcivity
-                                                  ));},
-                                                containercolor: Overseer.isColor
-                                                    ? MyAppColors.pickcolor
-                                                    : MyAppColors.orangcolors,
-                                                textcolor: Colors.white,
-                                                title: "Join this Program".tr),
-                                          ),
-                                          SizedBox(
-                                            height: Get.height * 0.020,
-                                          ),
-                                        ],
-                                      ),
-                                    )
-                                        :
-                                    Container(
-                                      width: double.infinity,
-                                      margin: EdgeInsets.only(left: 15),
-                                      // height: 390,
-                                      child: Column(
-                                        mainAxisAlignment: MainAxisAlignment.start,
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        children: [
-                                          SizedBox(
-                                            height: 15,
-                                          ),
-                                          Align(
-                                              alignment: Alignment.topLeft,
-                                              child: Text("Week 1".tr)),
-                                          SizedBox(
-                                            height: Get.height * 0.012,
-                                          ),
-                                          ///
-                                          Container(
-                                            height: Get.height * 0.15,
-                                            child: widget.dayAcivityonGoing.length == 0
-                                                ? Center(
-                                                child: Text(
-                                                  "Day Activity Not Found ${widget.dayAcivity.length}",
-                                                  style: TextStyle(
-                                                      color: Colors.black),
-                                                ))
-                                                : ListView.builder(
-                                                scrollDirection:
-                                                Axis.horizontal,
-                                                itemCount: widget
-                                                    .dayAcivityonGoing.length,
-                                                itemBuilder:
-                                                    (context, index) {
-                                                  {
-                                                    return GestureDetector(
-                                                      onTap: () {
-
+                                                ///
+                                                Container(
+                                                  height: Get.height * 0.15,
+                                                  child: widget.dayAcivity
+                                                              .length ==
+                                                          0
+                                                      ? Center(
+                                                          child: Text(
+                                                          "Day Activity Not Found",
+                                                          style: TextStyle(
+                                                              color:
+                                                                  Colors.black),
+                                                        ))
+                                                      : ListView.builder(
+                                                          scrollDirection:
+                                                              Axis.horizontal,
+                                                          itemCount: widget
+                                                              .dayAcivity
+                                                              .length,
+                                                          itemBuilder:
+                                                              (context, index) {
+                                                            {
+                                                              return GestureDetector(
+                                                                onTap: () {},
+                                                                child:
+                                                                    ListViewHorizental(
+                                                                  image: widget
+                                                                              .dayAcivity[index]
+                                                                              .image ==
+                                                                          null
+                                                                      ? "https://images.hdqwalls.com/wallpapers/gym-girl.jpg"
+                                                                      : "${Overseer.course_image_path}/${widget.dayAcivity[index].image}",
+                                                                  percent: Data[
+                                                                          index]
+                                                                      .percent,
+                                                                  title1: widget
+                                                                      .dayAcivity[
+                                                                          index]
+                                                                      .day
+                                                                      .toString(),
+                                                                  title2: widget
+                                                                      .dayAcivity[
+                                                                          index]
+                                                                      .detail,
+                                                                ),
+                                                              );
+                                                            }
+                                                          }),
+                                                ),
+                                                SizedBox(
+                                                  height: Get.height * 0.012,
+                                                ),
+                                                Container(
+                                                  margin: EdgeInsets.only(
+                                                      right: 15),
+                                                  child: MyButton(
+                                                      shadowColor: Overseer
+                                                              .isColor
+                                                          ? MyAppColors
+                                                              .pickcolor
+                                                          : MyAppColors
+                                                              .orangcolors,
+                                                      ontap: () {
+                                                        Get.to(Recommendation9(
+                                                          courseId:
+                                                              widget.courseId,
+                                                          // dayAcivity: widget.dayAcivity
+                                                        ));
                                                       },
-                                                      child:
-                                                      ListViewHorizental(
-                                                        image: widget
-                                                            .dayAcivityonGoing[
-                                                        index]
-                                                            .image == null
-                                                            ? "https://images.hdqwalls.com/wallpapers/gym-girl.jpg"
-                                                            : "${Overseer.course_image_path}/${widget.dayAcivityonGoing[index].image}",
-                                                        percent: Data[index].percent,
-                                                        title1: widget.dayAcivityonGoing[
-                                                        index].day.toString(),
-                                                        title2: widget.dayAcivityonGoing[index].detail,
-                                                      ),
-                                                    );
-                                                  }
-                                                }),
+                                                      containercolor:
+                                                          Overseer.isColor
+                                                              ? MyAppColors
+                                                                  .pickcolor
+                                                              : MyAppColors
+                                                                  .orangcolors,
+                                                      textcolor: Colors.white,
+                                                      title: "Join this Program"
+                                                          .tr),
+                                                ),
+                                                SizedBox(
+                                                  height: Get.height * 0.020,
+                                                ),
+                                              ],
+                                            ),
+                                          )
+                                        : Container(
+                                            width: double.infinity,
+                                            margin: EdgeInsets.only(left: 15),
+                                            // height: 390,
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                SizedBox(
+                                                  height: 15,
+                                                ),
+                                                Align(
+                                                    alignment:
+                                                        Alignment.topLeft,
+                                                    child: Text("Week 1".tr)),
+                                                SizedBox(
+                                                  height: Get.height * 0.012,
+                                                ),
+
+                                                ///
+                                                Container(
+                                                  height: Get.height * 0.15,
+                                                  child: widget
+                                                              .dayAcivityonGoing
+                                                              .length ==
+                                                          0
+                                                      ? Center(
+                                                          child: Text(
+                                                          "Day Activity Not Found ${widget.dayAcivity.length}",
+                                                          style: TextStyle(
+                                                              color:
+                                                                  Colors.black),
+                                                        ))
+                                                      : ListView.builder(
+                                                          scrollDirection:
+                                                              Axis.horizontal,
+                                                          itemCount: widget
+                                                              .dayAcivityonGoing
+                                                              .length,
+                                                          itemBuilder:
+                                                              (context, index) {
+                                                            {
+                                                              return GestureDetector(
+                                                                onTap: () {},
+                                                                child:
+                                                                    ListViewHorizental(
+                                                                  image: widget
+                                                                              .dayAcivityonGoing[index]
+                                                                              .image ==
+                                                                          null
+                                                                      ? "https://images.hdqwalls.com/wallpapers/gym-girl.jpg"
+                                                                      : "${Overseer.course_image_path}/${widget.dayAcivityonGoing[index].image}",
+                                                                  percent: Data[
+                                                                          index]
+                                                                      .percent,
+                                                                  title1: widget
+                                                                      .dayAcivityonGoing[
+                                                                          index]
+                                                                      .day
+                                                                      .toString(),
+                                                                  title2: widget
+                                                                      .dayAcivityonGoing[
+                                                                          index]
+                                                                      .detail,
+                                                                ),
+                                                              );
+                                                            }
+                                                          }),
+                                                ),
+                                                SizedBox(
+                                                  height: Get.height * 0.015,
+                                                ),
+                                                Container(
+                                                  margin: EdgeInsets.only(
+                                                      right: 15),
+                                                  child: MyButton(
+                                                      shadowColor: Overseer
+                                                              .isColor
+                                                          ? MyAppColors
+                                                              .pickcolor
+                                                          : MyAppColors
+                                                              .orangcolors,
+                                                      ontap: () {
+                                                        Get.to(HomePage19(
+                                                          dayAcivityonGoing: widget
+                                                              .dayAcivityonGoing,
+                                                        ));
+                                                      },
+                                                      containercolor:
+                                                          Overseer.isColor
+                                                              ? MyAppColors
+                                                                  .pickcolor
+                                                              : MyAppColors
+                                                                  .orangcolors,
+                                                      textcolor: Colors.white,
+                                                      title:
+                                                          "Start this Program"
+                                                              .tr),
+                                                ),
+                                                SizedBox(
+                                                  height: Get.height * 0.020,
+                                                ),
+                                              ],
+                                            ),
                                           ),
-                                          SizedBox(
-                                            height: Get.height * 0.015,
-                                          ),
-                                          Container(
-                                            margin: EdgeInsets.only(right: 15),
-                                            child: MyButton(
-                                                shadowColor: Overseer.isColor
-                                                    ? MyAppColors.pickcolor
-                                                    : MyAppColors.orangcolors,
-                                                ontap: () {
-                                                  Get.to(HomePage19(
-                                                    dayAcivityonGoing: widget.dayAcivityonGoing,
-                                                  ));
-                                                },
-                                                containercolor: Overseer.isColor
-                                                    ? MyAppColors.pickcolor
-                                                    : MyAppColors.orangcolors,
-                                                textcolor: Colors.white,
-                                                title: "Start this Program".tr),
-                                          ),
-                                          SizedBox(
-                                            height: Get.height * 0.020,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
                                   ),
                                 ]))
                           ]),
@@ -531,5 +576,3 @@ class AppTheme {
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );
 }
-
-

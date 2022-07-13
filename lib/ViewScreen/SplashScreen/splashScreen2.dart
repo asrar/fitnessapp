@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:fitnessapp/AppLayer/Overseer.dart';
+import 'package:fitnessapp/ViewScreen/Homepages/Courses/filterpage3.dart';
 import 'package:fitnessapp/ViewScreen/Homepages/homepage1.dart';
 import 'package:fitnessapp/ViewScreen/SplashScreen/splashScreen3.dart';
 import 'package:fitnessapp/ViewScreen/Homepages/homepage6.dart';
@@ -14,20 +15,20 @@ class SplashScreen2 extends StatefulWidget {
 }
 
 class _SplashScreen2State extends State<SplashScreen2> {
-
-
   @override
   void initState() {
     super.initState();
-    getValidation().whenComplete(() async{
+    getValidation().whenComplete(() async {
       Timer(
         Duration(seconds: 2),
-            () => Get.to(Overseer.userId == null ? SplashScreen3() : HomePage1()),
+        () => Get.to(Overseer.userId == null ? SplashScreen3() : FilterPage3()),
       );
     });
   }
-  Future getValidation () async{
-    final SharedPreferences _sharedPreferences = await SharedPreferences.getInstance();
+
+  Future getValidation() async {
+    final SharedPreferences _sharedPreferences =
+        await SharedPreferences.getInstance();
     var obtainUserId = _sharedPreferences.getInt("userId");
     setState(() {
       Overseer.userId = obtainUserId!;
@@ -47,8 +48,8 @@ class _SplashScreen2State extends State<SplashScreen2> {
             decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("assets/image/slashimage.png"),
-                  colorFilter:
-                  ColorFilter.mode(Colors.black.withOpacity(0.9), BlendMode.darken),
+                  colorFilter: ColorFilter.mode(
+                      Colors.black.withOpacity(0.9), BlendMode.darken),
                   fit: BoxFit.cover),
             ),
             child: Column(
@@ -64,10 +65,12 @@ class _SplashScreen2State extends State<SplashScreen2> {
                   ),
                 ),
                 SizedBox(
-                  height: Get.height*0.015,
+                  height: Get.height * 0.015,
                 ),
                 Image.asset("assets/image/font.png"),
-               SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Image.asset("assets/image/12 font.png")
               ],
             ),

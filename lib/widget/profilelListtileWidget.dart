@@ -6,12 +6,16 @@ class ProfileLIsttileWidget extends StatelessWidget {
   final IconData icon1, icon2;
   final Function() ontap;
 
-  ProfileLIsttileWidget({required this.ontap, required this.name, required this.icon1, required this.icon2});
+  ProfileLIsttileWidget(
+      {required this.ontap,
+      required this.name,
+      required this.icon1,
+      required this.icon2});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Get.height * 0.050,
+      height: Get.height * 0.040,
       child: GestureDetector(
         onTap: ontap,
         child: Row(

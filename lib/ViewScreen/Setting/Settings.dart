@@ -24,13 +24,14 @@ class _SettingsState extends State<Settings> {
           },
           icon: Icon(
             Icons.arrow_back_ios,
-            color: Colors.black,
           ),
         ),
         centerTitle: true,
         title: Text(
           'Settings'.tr,
-          style: TextStyle(letterSpacing: 1, color: Colors.black),
+          style: TextStyle(
+            letterSpacing: 1,
+          ),
         ),
       ),
       body: ListView(
@@ -53,7 +54,7 @@ class _SettingsState extends State<Settings> {
           ),
           Divider(),
           GestureDetector(
-            onTap: (){
+            onTap: () {
               Get.to(Theme2());
             },
             child: ListTile(
@@ -73,7 +74,7 @@ class _SettingsState extends State<Settings> {
           ),
           Divider(),
           GestureDetector(
-            onTap: (){},
+            onTap: () {},
             child: ListTile(
               leading: CircleAvatar(
                 backgroundColor: Colors.grey[300],
@@ -91,7 +92,7 @@ class _SettingsState extends State<Settings> {
           ),
           Divider(),
           GestureDetector(
-            onTap: (){},
+            onTap: () {},
             child: ListTile(
               leading: CircleAvatar(
                 backgroundColor: Colors.grey[300],
@@ -109,7 +110,7 @@ class _SettingsState extends State<Settings> {
           ),
           Divider(),
           GestureDetector(
-            onTap: (){},
+            onTap: () {},
             child: ListTile(
               leading: CircleAvatar(
                 backgroundColor: Colors.grey[300],
@@ -127,7 +128,7 @@ class _SettingsState extends State<Settings> {
           ),
           Divider(),
           GestureDetector(
-            onTap: (){},
+            onTap: () {},
             child: ListTile(
               leading: CircleAvatar(
                 backgroundColor: Colors.grey[300],
@@ -145,7 +146,7 @@ class _SettingsState extends State<Settings> {
           ),
           Divider(),
           GestureDetector(
-            onTap: (){
+            onTap: () {
               Get.to(ChooseLanguage());
             },
             child: ListTile(
